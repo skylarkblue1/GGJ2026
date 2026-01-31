@@ -9,6 +9,15 @@ public class InteractionController : MonoBehaviour
 
     public Sprite ladder;
 
+    private SpriteRenderer self;
+
+    public bool hiding = false;
+
+    public void Awake()
+    {
+        self = gameObject.GetComponent<SpriteRenderer>();
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "interactable")
@@ -50,7 +59,34 @@ public class InteractionController : MonoBehaviour
                 Debug.Log("Placing ladder");
                 inventory.heldObject = "Empty";
                 sprite = ladder; //not... changing sprite? Hopefully it works with actual sprites or idk
-            } // else if (all the other items listed)
+            } else if (inventory.heldObject == "treats")
+            {
+
+            } else if (inventory.heldObject == "slippers")
+            {
+
+            } else if (inventory.heldObject == "leaflet")
+            {
+
+            } else if (inventory.heldObject == "key")
+            {
+
+            } else if (inventory.heldObject == "photo")
+            {
+
+            }
+        }
+
+        if (tags.tags[0] == "hide" && !hiding)
+        {
+            self.enabled = false;
+            // play hide sound idk
+            hiding = true;
+        } else if (tags.tags[0] == "hide" && hiding)
+        {
+            self.enabled = true;
+            // play hide sound again
+            hiding = false;
         }
     }
 }

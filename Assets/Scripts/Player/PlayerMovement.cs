@@ -10,15 +10,18 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D _rigidbody;
     private Vector2 _movementInput;
+    private InteractionController interactions;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        interactions = GetComponent<InteractionController>();
     }
 
     private void FixedUpdate()
     {
-        _rigidbody.linearVelocity = _movementInput * _speed;
+        if (!interactions.hiding)
+            _rigidbody.linearVelocity = _movementInput * _speed;
     }
 
     private void OnMove(InputValue inputValue)

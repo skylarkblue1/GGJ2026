@@ -51,24 +51,17 @@ public class DialogueHandler : MonoBehaviour
         if (!events.dialogueActive)
         {
             if (whichDialogue == "LivingRoom")
-            {
                 LivingRoomDialogue(0);
-            } else if (whichDialogue == "Kitchen")
-            {
-
-            } else if (whichDialogue == "Ending")
-            {
-
-            } else if (whichDialogue == "CaughtMum")
-            {
-
-            } else if (whichDialogue == "CaughtGran")
-            {
-
-            } else if (whichDialogue == "Basement")
-            {
-
-            }
+            else if (whichDialogue == "Kitchen")
+                LivingRoomDialogue(0);
+            else if (whichDialogue == "Ending")
+                LivingRoomDialogue(0);
+            else if (whichDialogue == "CaughtMum")
+                LivingRoomDialogue(0);
+            else if (whichDialogue == "CaughtGran")
+                LivingRoomDialogue(0);
+            else if (whichDialogue == "Basement")
+                LivingRoomDialogue(0);
 
         }
     }
@@ -103,18 +96,38 @@ public class DialogueHandler : MonoBehaviour
         subtitles.text = dialogueString;
 
         if (dialogueCount == 0 || dialogueCount == 1 || dialogueCount == 2 || dialogueCount == 7)
-        {
             StartCoroutine(DialogueWait5());
-        } else if (dialogueCount == 5 || dialogueCount == 8 || dialogueCount == 10)
-        {
+        else if (dialogueCount == 5 || dialogueCount == 8 || dialogueCount == 10)
             StartCoroutine(DialogueWait4());
-        } else if (dialogueCount == 3 || dialogueCount == 4 || dialogueCount == 6 || dialogueCount == 9 || dialogueCount == 11)
-        {
+        else if (dialogueCount == 3 || dialogueCount == 4 || dialogueCount == 6 || dialogueCount == 9 || dialogueCount == 11)
             StartCoroutine(DialogueWait3());
-        } else if (dialogueCount == 12)
-        {
+        else if (dialogueCount == 12)
             StartCoroutine(DialogueWait6());
-        }
+
+    }
+
+    private void KitchenDialogue(int count)
+    {
+
+    }
+
+    private void EndingDialogue(int count)
+    {
+
+    }
+
+    private void CaughtMumDialogue(int count)
+    {
+
+    }
+
+    private void CaughtGranDialogue(int count)
+    {
+
+    }
+
+    private void BasementDialogue(int count)
+    {
 
     }
 
@@ -123,115 +136,74 @@ public class DialogueHandler : MonoBehaviour
         yield return new WaitForSeconds(6.0f);
         dialogueCount++;
         if (whichDialogue == "LivingRoom")
-        {
             LivingRoomDialogue(dialogueCount);
-        }
         else if (whichDialogue == "Kitchen")
-        {
-
-        }
+            KitchenDialogue(dialogueCount);
         else if (whichDialogue == "Ending")
-        {
-
-        }
+            EndingDialogue(dialogueCount);
         else if (whichDialogue == "CaughtMum")
-        {
-
-        }
+            CaughtMumDialogue(dialogueCount);
         else if (whichDialogue == "CaughtGran")
-        {
-
-        }
+            CaughtGranDialogue(dialogueCount);
         else if (whichDialogue == "Basement")
-        {
-
-        }
+            BasementDialogue(dialogueCount);
     }
     IEnumerator DialogueWait5()
     {
         yield return new WaitForSeconds(5.0f);
         dialogueCount++;
         if (whichDialogue == "LivingRoom")
-        {
             LivingRoomDialogue(dialogueCount);
-        }
         else if (whichDialogue == "Kitchen")
-        {
-
-        }
+            KitchenDialogue(dialogueCount);
         else if (whichDialogue == "Ending")
-        {
-
-        }
+            EndingDialogue(dialogueCount);
         else if (whichDialogue == "CaughtMum")
-        {
-
-        }
+            CaughtMumDialogue(dialogueCount);
         else if (whichDialogue == "CaughtGran")
-        {
-
-        }
+            CaughtGranDialogue(dialogueCount);
         else if (whichDialogue == "Basement")
-        {
-
-        }
+            BasementDialogue(dialogueCount);
     }
     IEnumerator DialogueWait4()
     {
         yield return new WaitForSeconds(4.0f);
         dialogueCount++;
         if (whichDialogue == "LivingRoom")
-        {
             LivingRoomDialogue(dialogueCount);
-        }
         else if (whichDialogue == "Kitchen")
-        {
-
-        }
+            KitchenDialogue(dialogueCount);
         else if (whichDialogue == "Ending")
-        {
-
-        }
+            EndingDialogue(dialogueCount);
         else if (whichDialogue == "CaughtMum")
-        {
-
-        }
+            CaughtMumDialogue(dialogueCount);
         else if (whichDialogue == "CaughtGran")
-        {
-
-        }
+            CaughtGranDialogue(dialogueCount);
         else if (whichDialogue == "Basement")
-        {
-
-        }
+            BasementDialogue(dialogueCount);
     }
     IEnumerator DialogueWait3()
     {
         yield return new WaitForSeconds(3.0f);
         dialogueCount++;
         if (whichDialogue == "LivingRoom")
-        {
             LivingRoomDialogue(dialogueCount);
-        }
         else if (whichDialogue == "Kitchen")
-        {
-
-        }
+            KitchenDialogue(dialogueCount);
         else if (whichDialogue == "Ending")
-        {
-
-        }
+            EndingDialogue(dialogueCount);
         else if (whichDialogue == "CaughtMum")
-        {
-
-        }
+            CaughtMumDialogue(dialogueCount);
         else if (whichDialogue == "CaughtGran")
-        {
-
-        }
+            CaughtGranDialogue(dialogueCount);
         else if (whichDialogue == "Basement")
-        {
+            BasementDialogue(dialogueCount);
+    }
 
-        }
+    IEnumerator DialogueWait2()
+    {
+        yield return new WaitForSeconds(2.0f);
+
+        // fade to black end game.
     }
 }

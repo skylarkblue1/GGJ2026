@@ -1493,8 +1493,29 @@ MonoBehaviour:
   - Oh sweetie, what are you doing there?
   - Did we wake you? We were just raving about what an amazing film this is!
   - "...It\u2019s late. Let\u2019s go upstairs and I\u2019ll tuck you back into bed"
-  DialogueEnd: []
-  DialogueKitchen: []
+  DialogueEnd:
+  - Hang on, how did this get here?
+  - "Wow, it\u2019s been a couple of years since I last looked at this"
+  - "...That was the best holiday, wasn\u2019t it."
+  - None of us wanted to come home.
+  - "That\u2019s where we bought him that mask he loves to wear"
+  - Do you remember what your mum said when we got back?
+  - She said she had the time of her life without us in the way.
+  - She went to the cafe and made about 10 new friends.
+  - "And the kiddo kept asking when we\u2019d be going back to the \u2018holiday
+    place\u2019."
+  - ...I think we need to talk to both of them about the job.
+  - "We\u2019re not protecting them. They\u2019re just watching us be miserable."
+  - "...You\u2019re right. If it\u2019s going to affect them, they deserve to know."
+  - "Honestly\u2026"
+  - "\u2026Part of me thinks they already do"
+  DialogueKitchen:
+  - "It\u2019s tearing them apart\u2026"
+  - "Kids pick up on these things\u2026"
+  - "I don\u2019t want to be a burden\u2026"
+  - "It would be nice to meet new people again\u2026"
+  - "I might need more support as I get older\u2026"
+  - "They need to spread their wings\u2026"
   granDialogueDetected:
   - "*Gasp* You shouldn\u2019t be up at this hour; you\u2019ve got school in the
     morning!"

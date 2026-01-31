@@ -41,7 +41,8 @@ public class DialogueHandler : MonoBehaviour
 
         subtitles = gameObject.GetComponent<TextMeshProUGUI>();
 
-        StartNormalDialogue("LivingRoom");
+        //For testing
+        StartNormalDialogue("Ending");
     }
 
     public void StartNormalDialogue(string location)
@@ -53,15 +54,15 @@ public class DialogueHandler : MonoBehaviour
             if (whichDialogue == "LivingRoom")
                 LivingRoomDialogue(0);
             else if (whichDialogue == "Kitchen")
-                LivingRoomDialogue(0);
+                KitchenDialogue(0);
             else if (whichDialogue == "Ending")
-                LivingRoomDialogue(0);
+                EndingDialogue(0);
             else if (whichDialogue == "CaughtMum")
-                LivingRoomDialogue(0);
+                CaughtMumDialogue(0);
             else if (whichDialogue == "CaughtGran")
-                LivingRoomDialogue(0);
+                CaughtGranDialogue(0);
             else if (whichDialogue == "Basement")
-                LivingRoomDialogue(0);
+                BasementDialogue(0);
 
         }
     }
@@ -108,12 +109,62 @@ public class DialogueHandler : MonoBehaviour
 
     private void KitchenDialogue(int count)
     {
+        dialogueCount = count;
 
+        if (dialogueCount > 12)
+        {
+            dialogueCount = 0;
+            subtitles.text = "";
+            StartCoroutine(DialogueWait3());
+        }
+
+        dialogueString = "<color=\"Green\">Gran: </color>" + DialogueKitchen[dialogueCount];
+
+        subtitles.text = dialogueString;
+
+        if (dialogueCount == 3 || dialogueCount == 4)
+            StartCoroutine(DialogueWait4());
+        else if (dialogueCount == 0 || dialogueCount == 1 || dialogueCount == 2 || dialogueCount == 5)
+            StartCoroutine(DialogueWait3());
     }
 
     private void EndingDialogue(int count)
     {
+        dialogueCount = count;
 
+        if (dialogueCount > 12)
+        {
+            dialogueCount = 0;
+            subtitles.text = "";
+            StartCoroutine(DialogueWait3());
+        }
+
+        // post text, if dialogue count is xyz delay for that long, increase count, loop back around
+        if (dialogueCount == 0 || dialogueCount == 2 || dialogueCount == 3 || dialogueCount == 6 || dialogueCount == 7 || dialogueCount == 11)
+        {
+            whoSpeaking = "<color=\"blue\">Dad:</color>";
+            dadIndicator.enabled = true;
+            mumIndicator.enabled = false;
+        }
+        else
+        {
+            whoSpeaking = "<color=\"red\">Mum:</color>";
+            mumIndicator.enabled = true;
+            dadIndicator.enabled = false;
+        }
+
+        dialogueString = whoSpeaking + " " + DialogueEnd[dialogueCount];
+
+        subtitles.text = dialogueString;
+
+        if (dialogueCount == 1 || dialogueCount == 8 || dialogueCount == 11)
+            StartCoroutine(DialogueWait5());
+        else if (dialogueCount == 2 || dialogueCount == 4 || dialogueCount == 5 || dialogueCount == 6 || dialogueCount == 7 || dialogueCount == 10 || dialogueCount == 13)
+            StartCoroutine(DialogueWait4());
+        else if (dialogueCount == 0 || dialogueCount == 3 || dialogueCount == 9)
+            StartCoroutine(DialogueWait3());
+        else if (dialogueCount == 12)
+            StartCoroutine(DialogueWait2());
     }
 
     private void CaughtMumDialogue(int count)
@@ -134,7 +185,7 @@ public class DialogueHandler : MonoBehaviour
     IEnumerator DialogueWait6()
     {
         yield return new WaitForSeconds(6.0f);
-        dialogueCount++;
+        dialogueCount++; // try catch here instead of the reset in each dialogue
         if (whichDialogue == "LivingRoom")
             LivingRoomDialogue(dialogueCount);
         else if (whichDialogue == "Kitchen")
@@ -203,7 +254,18 @@ public class DialogueHandler : MonoBehaviour
     IEnumerator DialogueWait2()
     {
         yield return new WaitForSeconds(2.0f);
-
-        // fade to black end game.
+        dialogueCount++;
+        if (whichDialogue == "LivingRoom")
+            LivingRoomDialogue(dialogueCount);
+        else if (whichDialogue == "Kitchen")
+            KitchenDialogue(dialogueCount);
+        else if (whichDialogue == "Ending")
+            EndingDialogue(dialogueCount);
+        else if (whichDialogue == "CaughtMum")
+            CaughtMumDialogue(dialogueCount);
+        else if (whichDialogue == "CaughtGran")
+            CaughtGranDialogue(dialogueCount);
+        else if (whichDialogue == "Basement")
+            BasementDialogue(dialogueCount);
     }
 }

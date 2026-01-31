@@ -8,6 +8,11 @@ public class InteractionController : MonoBehaviour
     private GameObject interactable;
 
     public Sprite ladder;
+    public Sprite treats;
+    public Sprite slippers;
+    public Sprite leaflet;
+    public Sprite key;
+    public Sprite photo;
 
     private SpriteRenderer self;
 
@@ -57,24 +62,30 @@ public class InteractionController : MonoBehaviour
             if (inventory.heldObject == "ladder")
             {
                 Debug.Log("Placing ladder");
-                inventory.heldObject = "Empty";
                 sprite = ladder; //not... changing sprite? Hopefully it works with actual sprites or idk
             } else if (inventory.heldObject == "treats")
             {
-
+                Debug.Log("Placing treats");
+                sprite = treats;
             } else if (inventory.heldObject == "slippers")
             {
-
+                Debug.Log("Placing slippers");
+                sprite = slippers;
             } else if (inventory.heldObject == "leaflet")
             {
-
+                Debug.Log("Placing leaflet");
+                sprite = leaflet;
             } else if (inventory.heldObject == "key")
             {
-
+                Debug.Log("Placing key");
+                sprite = key;
             } else if (inventory.heldObject == "photo")
             {
-
+                Debug.Log("Placing photo");
+                sprite = photo;
             }
+
+            inventory.heldObject = "Empty";
         }
 
         if (tags.tags[0] == "hide" && !hiding)

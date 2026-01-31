@@ -18,6 +18,9 @@ public class InteractionController : MonoBehaviour
 
     public bool hiding = false;
 
+    private Tags tags;
+    private Sprite sprite;
+
     public void Awake()
     {
         self = gameObject.GetComponent<SpriteRenderer>();
@@ -29,6 +32,25 @@ public class InteractionController : MonoBehaviour
         {
             inRange = true;
             interactable = other.gameObject;
+
+            tags = interactable.GetComponent<Tags>();
+            sprite = interactable.GetComponent<SpriteRenderer>().sprite;
+
+            if (tags.tags[0] == "detection")
+            {
+                // trigger class in detection script this script is already too long
+            }
+            
+            if (tags.tags[0] == "disturbance")
+            {
+                if (tags.tags[1] == "dog")
+                {
+
+                } else if (tags.tags[1] == "boxes")
+                {
+
+                }
+            }
         }
     }
 
@@ -43,9 +65,6 @@ public class InteractionController : MonoBehaviour
 
     void OnInteract()
     {
-        Tags tags = interactable.GetComponent<Tags>();
-        Sprite sprite = interactable.GetComponent<SpriteRenderer>().sprite;
-
         Debug.Log("Interacting");
         if (inRange && inventory.heldObject == "Empty" && tags.tags[1] == "pickup")
         {

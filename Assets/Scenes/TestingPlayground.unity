@@ -1521,7 +1521,9 @@ MonoBehaviour:
     morning!"
   - Did you hear mum and dad shouting? *sigh*
   - "I\u2019ll take you back up to bed."
-  DialogueBasement: []
+  DialogueBasement:
+  - Were those boxes always like that?
+  - They really need to tidy up in here!
   whichDialogue: 
 --- !u!1 &1400670445
 GameObject:

@@ -42,7 +42,7 @@ public class DialogueHandler : MonoBehaviour
         subtitles = gameObject.GetComponent<TextMeshProUGUI>();
 
         //For testing
-        StartNormalDialogue("Ending");
+        StartNormalDialogue("Basement");
     }
 
     public void StartNormalDialogue(string location)
@@ -169,17 +169,64 @@ public class DialogueHandler : MonoBehaviour
 
     private void CaughtMumDialogue(int count)
     {
+        dialogueCount = count;
 
+        if (dialogueCount > 12)
+        {
+            dialogueCount = 0;
+            subtitles.text = "";
+            StartCoroutine(DialogueWait3());
+        }
+
+        dialogueString = "<color=\"Red\">Mum: </color>" + mumDialogueDetected[dialogueCount];
+
+        subtitles.text = dialogueString;
+
+        if (dialogueCount == 0)
+            StartCoroutine(DialogueWait3());
+        else if (dialogueCount == 1 || dialogueCount == 2)
+            StartCoroutine(DialogueWait5());
     }
 
     private void CaughtGranDialogue(int count)
     {
+        dialogueCount = count;
 
+        if (dialogueCount > 12)
+        {
+            dialogueCount = 0;
+            subtitles.text = "";
+            StartCoroutine(DialogueWait3());
+        }
+
+        dialogueString = "<color=\"Green\">Gran: </color>" + granDialogueDetected[dialogueCount];
+
+        subtitles.text = dialogueString;
+
+        if (dialogueCount == 1)
+            StartCoroutine(DialogueWait4());
+        else if (dialogueCount == 2)
+            StartCoroutine(DialogueWait3());
+        else if (dialogueCount == 0)
+            StartCoroutine(DialogueWait5());
     }
 
     private void BasementDialogue(int count)
     {
+        dialogueCount = count;
 
+        if (dialogueCount > 12)
+        {
+            dialogueCount = 0;
+            subtitles.text = "";
+            StartCoroutine(DialogueWait3());
+        }
+
+        dialogueString = "<color=\"Green\">Gran: </color>" + DialogueBasement[dialogueCount];
+
+        subtitles.text = dialogueString;
+        
+        StartCoroutine(DialogueWait3());
     }
 
     IEnumerator DialogueWait6()

@@ -33,6 +33,8 @@ public class DetectionController : MonoBehaviour
 
     public AudioSource tv;
 
+    public GameObject dogAudio;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "detection")
@@ -45,6 +47,8 @@ public class DetectionController : MonoBehaviour
                 interactionController.hiding = true;
                 dogSleeping.enabled = false;
                 dogAwake.enabled = true;
+                SFXStart dogBarkAudio = dogAudio.GetComponent<SFXStart>();
+                dogBarkAudio.StartSFX();
             }
             else if (tags.tags[0] == "window" && !window)
             {
@@ -61,6 +65,8 @@ public class DetectionController : MonoBehaviour
                 interactionController.hiding = true;
                 dogSleeping.enabled = false;
                 dogAwake.enabled = true;
+                SFXStart dogBarkAudio = dogAudio.GetComponent<SFXStart>();
+                dogBarkAudio.StartSFX();
             }
             else if (tags.tags[0] == "boxes1")
             {

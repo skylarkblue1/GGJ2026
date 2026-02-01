@@ -54,6 +54,7 @@ public class InteractionController : MonoBehaviour
     public SpriteRenderer overlay;
     public SpriteRenderer escape;
 
+    public GameObject window;
 
     public void Awake()
     {
@@ -136,6 +137,8 @@ public class InteractionController : MonoBehaviour
             {
                 interactable.GetComponent<SpriteRenderer>().sprite = windowOpen;
                 detection.window = true;
+                SFXStart windowAudio = window.GetComponent<SFXStart>();
+                windowAudio.StartSFX();
                 //Start playing window sound
             }
         }
@@ -207,7 +210,7 @@ public class InteractionController : MonoBehaviour
     {
         mum1.enabled = false;
         mum2.enabled = true;
-        detection.tvGlow.enabled = false;
+        //detection.tvGlow.enabled = false;
         hiding = true;
 
 

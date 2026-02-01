@@ -56,6 +56,8 @@ public class InteractionController : MonoBehaviour
 
     public GameObject window;
 
+    public SpriteRenderer kid;
+
     public void Awake()
     {
         self = gameObject.GetComponent<SpriteRenderer>();
@@ -210,6 +212,7 @@ public class InteractionController : MonoBehaviour
     {
         mum1.enabled = false;
         mum2.enabled = true;
+        kid.enabled = false;
         //detection.tvGlow.enabled = false;
         hiding = true;
 

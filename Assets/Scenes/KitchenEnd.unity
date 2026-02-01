@@ -2326,7 +2326,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -431}
+  m_AnchoredPosition: {x: 0, y: -311}
   m_SizeDelta: {x: 1390.0989, y: 201.4844}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1318418322
@@ -2490,7 +2490,7 @@ MonoBehaviour:
   DialogueBasement:
   - Were those boxes always like that?
   - They really need to tidy up in here!
-  startDialogue: Kitchen
+  startDialogue: 
   whichDialogue: 
   detectionController: {fileID: 1119785272}
 --- !u!1 &1572176854
@@ -3014,6 +3014,10 @@ PrefabInstance:
       objectReference: {fileID: 470367813}
     - target: {fileID: 76320898263959250, guid: bd999aa3c0374874599b6a9a61a8284c, type: 3}
       propertyPath: Overlay
+      value: 
+      objectReference: {fileID: 764976228}
+    - target: {fileID: 76320898263959250, guid: bd999aa3c0374874599b6a9a61a8284c, type: 3}
+      propertyPath: overlay
       value: 
       objectReference: {fileID: 764976228}
     - target: {fileID: 76320898263959250, guid: bd999aa3c0374874599b6a9a61a8284c, type: 3}

@@ -51,6 +51,10 @@ public class InteractionController : MonoBehaviour
     public SpriteRenderer mum1;
     public SpriteRenderer mum2;
 
+    public SpriteRenderer Overlay;
+    public SpriteRenderer escape;
+
+
     public void Awake()
     {
         self = gameObject.GetComponent<SpriteRenderer>();
@@ -91,10 +95,19 @@ public class InteractionController : MonoBehaviour
         Debug.Log("Interacting");
         if (inRange && inventory.heldObjectsCount < 2 && tags.tags[1] == "pickup")
         {
-            Debug.Log("trying to interact");
-            inventory.AddItem(tags.tags[0]);
-            Debug.Log("New held object is: " + tags.tags[0]);
-            interactable.SetActive(false);
+            if (tags.tags[0] == "leaflet")
+            {
+                Overlay.enabled = true;
+                escape.enabled = true;
+
+                hiding = true;
+            } else
+            {
+                Debug.Log("trying to interact");
+                inventory.AddItem(tags.tags[0]);
+                Debug.Log("New held object is: " + tags.tags[0]);
+                interactable.SetActive(false);
+            }
 
             if (tags.tags[0] == "key")
             {
@@ -176,6 +189,14 @@ public class InteractionController : MonoBehaviour
             // play hide sound again
             hiding = false;
         }
+    }
+
+    private void OnEscape()
+    {
+        Overlay.enabled = false;
+        escape.enabled = false;
+
+        hiding = false;
     }
 
     private void Ending()

@@ -8,7 +8,7 @@ public class SFXStart : MonoBehaviour
 {
     AudioSource audioData;
 
-    public void Start()
+    public void StartSFX()
     {
         audioData = GetComponent<AudioSource>();
         audioData.Play(0);

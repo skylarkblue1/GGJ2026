@@ -26,6 +26,9 @@ public class DetectionController : MonoBehaviour
 
     public SpriteRenderer gran;
 
+    public GameObject boxes1;
+    public GameObject boxes2;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "detection")
@@ -62,6 +65,8 @@ public class DetectionController : MonoBehaviour
                 gran.enabled = true;
 
                 boxes1up.enabled = false;
+                SFXStart box1Audio = boxes1.GetComponent<SFXStart>();
+                box1Audio.StartSFX();
                 boxes1fall.enabled = true;
             } else if (tags.tags[0] == "boxes2")
             {
@@ -71,6 +76,8 @@ public class DetectionController : MonoBehaviour
                 gran.enabled = true;
 
                 boxes2up.enabled = false;
+                SFXStart box2Audio = boxes2.GetComponent<SFXStart>();
+                box2Audio.StartSFX();
                 boxes2fall.enabled = true;
             }
         }

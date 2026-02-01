@@ -79,7 +79,7 @@ public class DetectionController : MonoBehaviour
                 box1Audio.StartSFX();
                 boxes1fall.enabled = true;
 
-                DialogueWait2();
+                StartCoroutine(DialogueWait2());
             }
             else if (tags.tags[0] == "boxes2")
             {

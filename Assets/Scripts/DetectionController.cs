@@ -31,6 +31,8 @@ public class DetectionController : MonoBehaviour
     public GameObject boxes1;
     public GameObject boxes2;
 
+    public AudioSource tv;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "detection")
@@ -50,6 +52,7 @@ public class DetectionController : MonoBehaviour
                 caughtbymum = true;
                 interactionController.hiding = true;
                 tvGlow.enabled = false;
+                tv.enabled = false;
             }
             else if (tags.tags[0] == "dog" && !dog)
             {

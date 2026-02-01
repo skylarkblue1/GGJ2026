@@ -3442,6 +3442,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 76320898263959250, guid: bd999aa3c0374874599b6a9a61a8284c, type: 3}
+      propertyPath: window
+      value: 
+      objectReference: {fileID: 1379223707}
+    - target: {fileID: 408058356543990520, guid: bd999aa3c0374874599b6a9a61a8284c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.2674017
+      objectReference: {fileID: 0}
+    - target: {fileID: 408058356543990520, guid: bd999aa3c0374874599b6a9a61a8284c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.2674017
+      objectReference: {fileID: 0}
+    - target: {fileID: 408058356543990520, guid: bd999aa3c0374874599b6a9a61a8284c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6.2674017
+      objectReference: {fileID: 0}
+    - target: {fileID: 408058356543990520, guid: bd999aa3c0374874599b6a9a61a8284c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051016146402807484, guid: bd999aa3c0374874599b6a9a61a8284c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3796580651857122565, guid: bd999aa3c0374874599b6a9a61a8284c, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3486,6 +3510,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8769075758889902646, guid: bd999aa3c0374874599b6a9a61a8284c, type: 3}
+      propertyPath: tv
+      value: 
+      objectReference: {fileID: 1398832979}
     - target: {fileID: 8769075758889902646, guid: bd999aa3c0374874599b6a9a61a8284c, type: 3}
       propertyPath: tvGlow
       value: 

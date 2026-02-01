@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 8bac9eb81d361e14bb00f8821c318ede
+guid: 11a4cc7305070e54abf3c892e9e9e7af
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2618000798541105028
-    second: Slippers_0
+      213: -8913990660675758532
+    second: leaflet_0
   - first:
-      213: -1785131546608407467
-    second: Slippers_1
+      213: -4739295854393712669
+    second: leaflet_1
+  - first:
+      213: 5465362150067782821
+    second: leaflet_2
+  - first:
+      213: 8748629437334440843
+    second: leaflet_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Slippers_0
+      name: leaflet_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 17
-        width: 38
-        height: 36
+        x: 692
+        y: 816
+        width: 74
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4874bb20bd1055420800000000000000
-      internalID: 2618000798541105028
+      spriteID: c369543f8b42b4480800000000000000
+      internalID: -8913990660675758532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slippers_1
+      name: leaflet_1
       rect:
         serializedVersion: 2
-        x: 27
-        y: 4
-        width: 36
-        height: 38
+        x: 770
+        y: 807
+        width: 30
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +159,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 55cef0ff050f937e0800000000000000
-      internalID: -1785131546608407467
+      spriteID: 3ef9161c783aa3eb0800000000000000
+      internalID: -4739295854393712669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leaflet_2
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 179
+        width: 783
+        height: 1327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a4c7a33bedd8db40800000000000000
+      internalID: 5465362150067782821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leaflet_3
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 442
+        width: 278
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8b48dbfe10696970800000000000000
+      internalID: 8748629437334440843
       vertices: []
       indices: 
       edges: []
@@ -173,8 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Slippers_0: 2618000798541105028
-      Slippers_1: -1785131546608407467
+      leaflet_0: -8913990660675758532
+      leaflet_1: -4739295854393712669
+      leaflet_2: 5465362150067782821
+      leaflet_3: 8748629437334440843
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

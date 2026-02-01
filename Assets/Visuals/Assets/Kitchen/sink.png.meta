@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 8bac9eb81d361e14bb00f8821c318ede
+guid: 313bef3ec8d8bcd418bdb194846ec908
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2618000798541105028
-    second: Slippers_0
+      213: 1944054995938551939
+    second: sink_0
   - first:
-      213: -1785131546608407467
-    second: Slippers_1
+      213: 1724288873920561511
+    second: sink_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Slippers_0
+      name: sink_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 17
-        width: 38
-        height: 36
+        x: 151
+        y: 502
+        width: 117
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4874bb20bd1055420800000000000000
-      internalID: 2618000798541105028
+      spriteID: 388adb008bbaafa10800000000000000
+      internalID: 1944054995938551939
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slippers_1
+      name: sink_1
       rect:
         serializedVersion: 2
-        x: 27
-        y: 4
-        width: 36
-        height: 38
+        x: 415
+        y: 499
+        width: 1468
+        height: 616
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 55cef0ff050f937e0800000000000000
-      internalID: -1785131546608407467
+      spriteID: 761813c5897ede710800000000000000
+      internalID: 1724288873920561511
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -173,8 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Slippers_0: 2618000798541105028
-      Slippers_1: -1785131546608407467
+      sink_0: 1944054995938551939
+      sink_1: 1724288873920561511
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

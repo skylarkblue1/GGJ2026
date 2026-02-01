@@ -6,6 +6,10 @@ public class DetectionController : MonoBehaviour
 
     public bool slippers = false;
     public bool window = false;
+    public bool dog = false;
+
+    public SpriteRenderer dogSleeping;
+    public SpriteRenderer dogAwake;
 
     public DialogueHandler  dialogueHandler;
     public InteractionController interactionController;
@@ -25,6 +29,8 @@ public class DetectionController : MonoBehaviour
                 dialogueHandler.StartDialogue("CaughtGran");
                 caughtbygran = true;
                 interactionController.hiding = true;
+                dogSleeping.enabled = false;
+                dogAwake.enabled = true;
             }
             else if (tags.tags[0] == "window" && !window)
             {
@@ -32,6 +38,14 @@ public class DetectionController : MonoBehaviour
                 caughtbymum = true;
                 interactionController.hiding = true;
                 tvGlow.enabled = false;
+            }
+            else if (tags.tags[0] == "dog" && !dog)
+            {
+                dialogueHandler.StartDialogue("CaughtGran");
+                caughtbygran = true;
+                interactionController.hiding = true;
+                dogSleeping.enabled = false;
+                dogAwake.enabled = true;
             }
         }
         else if (other.tag == "instagameover")
@@ -49,7 +63,10 @@ public class DetectionController : MonoBehaviour
                 dialogueHandler.StartDialogue("CaughtGran");
                 caughtbygran = true;
                 interactionController.hiding = true;
+                dogSleeping.enabled = false;
+                dogAwake.enabled = true;
             }
+
         }
 
     }

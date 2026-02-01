@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +13,7 @@ public class InteractionController : MonoBehaviour
     public SpriteRenderer stoolPlaced;
     public SpriteRenderer treatsPlaced;
     public SpriteRenderer leafletPlaced;
-    public SpriteRenderer keyPlaced;
+    //public SpriteRenderer keyPlaced;
     public SpriteRenderer photoPlaced;
 
     [Header("Interact colliders")]
@@ -25,6 +26,14 @@ public class InteractionController : MonoBehaviour
     public Sprite windowOpen;
     public Sprite windowClose;
 
+    [Header("Gran Placements")]
+    public SpriteRenderer gran1;
+    public SpriteRenderer gran2;
+
+    // public Sprite dogAwake;
+
+    public BoxCollider2D basementDoor;
+
     private SpriteRenderer self;
 
     public bool hiding = false;
@@ -36,9 +45,19 @@ public class InteractionController : MonoBehaviour
 
     public DetectionController detection;
 
+    public DialogueHandler dialogue;
+
+    public SpriteRenderer mum1;
+    public SpriteRenderer mum2;
+
     public void Awake()
     {
         self = gameObject.GetComponent<SpriteRenderer>();
+
+        mum1 = GameObject.Find("Mum1").GetComponent<SpriteRenderer>();
+        mum2 = GameObject.Find("Mum2").GetComponent<SpriteRenderer>();
+
+        dialogue = GameObject.Find("Subtitles").GetComponent<DialogueHandler>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -75,6 +94,17 @@ public class InteractionController : MonoBehaviour
             inventory.AddItem(tags.tags[0]);
             Debug.Log("New held object is: " + tags.tags[0]);
             interactable.SetActive(false);
+
+            if (tags.tags[0] == "key")
+            {
+                detection.dog = true;
+                basementDoor.enabled = true;
+            }
+        }
+
+        if (inRange && tags.tags[0] == "slippers")
+        {
+            detection.slippers = true;
         }
 
         if (inRange && tags.tags[0] == "window")
@@ -108,6 +138,10 @@ public class InteractionController : MonoBehaviour
                     case "treats":
                         Debug.Log("Placing treats");
                         treats.enabled = false;
+                        detection.dogSleeping.enabled = false;
+                        gran1.enabled = false;
+                        detection.dogAwake.enabled = true;
+                        gran2.enabled = true;
                         break;
                     case "leaflet":
                         Debug.Log("Placing leaflet");
@@ -116,6 +150,8 @@ public class InteractionController : MonoBehaviour
                     case "photo":
                         Debug.Log("Placing photo");
                         photo.enabled = false;
+                        photoPlaced.enabled = true;
+                        Ending();
                         break;
                 }
 
@@ -134,5 +170,18 @@ public class InteractionController : MonoBehaviour
             // play hide sound again
             hiding = false;
         }
+    }
+
+    private void Ending()
+    {
+        mum1.enabled = false;
+        mum2.enabled = true;
+        detection.tvGlow.enabled = false;
+        hiding = true;
+
+
+        dialogue.StartDialogue("Ending");
+        dialogue.whichDialogue = "Ending";
+
     }
 }

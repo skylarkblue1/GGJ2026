@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 8bac9eb81d361e14bb00f8821c318ede
+guid: f501854e6de7c0f4f90d59017c1fed66
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2618000798541105028
-    second: Slippers_0
-  - first:
-      213: -1785131546608407467
-    second: Slippers_1
+      213: -6324290477812686418
+    second: stools_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Slippers_0
+      name: stools_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 17
-        width: 38
-        height: 36
+        x: 926
+        y: 534
+        width: 345
+        height: 603
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4874bb20bd1055420800000000000000
-      internalID: 2618000798541105028
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Slippers_1
-      rect:
-        serializedVersion: 2
-        x: 27
-        y: 4
-        width: 36
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 55cef0ff050f937e0800000000000000
-      internalID: -1785131546608407467
+      spriteID: ea1e695615b9b38a0800000000000000
+      internalID: -6324290477812686418
       vertices: []
       indices: 
       edges: []
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Slippers_0: 2618000798541105028
-      Slippers_1: -1785131546608407467
+      stools_0: -6324290477812686418
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

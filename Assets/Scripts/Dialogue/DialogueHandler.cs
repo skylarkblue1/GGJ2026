@@ -23,6 +23,8 @@ public class DialogueHandler : MonoBehaviour
 
     private EventHandler events;
 
+    public string startDialogue;
+
     private TextMeshProUGUI subtitles;
 
     public string whichDialogue;
@@ -40,12 +42,12 @@ public class DialogueHandler : MonoBehaviour
         events = GameObject.Find("EventSystem").GetComponent<EventHandler>();
         mumIndicator = GameObject.Find("MumIndicator").GetComponent<SpriteRenderer>();
         dadIndicator = GameObject.Find("DadIndicator").GetComponent<SpriteRenderer>();
-        //granIndicator = GameObject.Find("GranIndicator").GetComponent<SpriteRenderer>();
+        granIndicator = GameObject.Find("GranIndicator").GetComponent<SpriteRenderer>();
 
         subtitles = gameObject.GetComponent<TextMeshProUGUI>();
 
         //For testing
-        StartDialogue("LivingRoom");
+        StartDialogue(startDialogue);
     }
 
     private void Update()
@@ -138,6 +140,8 @@ public class DialogueHandler : MonoBehaviour
             StartCoroutine(DialogueWait3());
         }
 
+        granIndicator.enabled = true;
+
         dialogueString = "<color=\"Green\">Gran: </color>" + DialogueKitchen[dialogueCount];
 
         subtitles.text = dialogueString;
@@ -197,6 +201,9 @@ public class DialogueHandler : MonoBehaviour
             subtitles.text = "";
             StartCoroutine(DialogueWait3());
         }
+
+        dadIndicator.enabled = false;
+        mumIndicator.enabled = true;
 
         dialogueString = "<color=\"Red\">Mum: </color>" + mumDialogueDetected[dialogueCount];
 

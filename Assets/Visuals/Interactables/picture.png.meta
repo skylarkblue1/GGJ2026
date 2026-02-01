@@ -1,13 +1,22 @@
 fileFormatVersion: 2
-guid: 8bac9eb81d361e14bb00f8821c318ede
+guid: cffeb595ab5426443ac36321e3f9230c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2618000798541105028
-    second: Slippers_0
+      213: 2274226506919886036
+    second: picture_0
   - first:
-      213: -1785131546608407467
-    second: Slippers_1
+      213: 5149513688412164959
+    second: picture_1
+  - first:
+      213: -9005303540738923506
+    second: picture_2
+  - first:
+      213: -8467916761228601953
+    second: picture_3
+  - first:
+      213: -5287732125931091428
+    second: picture_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Slippers_0
+      name: picture_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 17
-        width: 38
-        height: 36
+        x: 449
+        y: 274
+        width: 1361
+        height: 1244
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4874bb20bd1055420800000000000000
-      internalID: 2618000798541105028
+      spriteID: 4dcbcbb65fcaf8f10800000000000000
+      internalID: 2274226506919886036
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slippers_1
+      name: picture_1
       rect:
         serializedVersion: 2
-        x: 27
-        y: 4
-        width: 36
-        height: 38
+        x: 1216
+        y: 1496
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +162,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 55cef0ff050f937e0800000000000000
-      internalID: -1785131546608407467
+      spriteID: f5391d39a6fb67740800000000000000
+      internalID: 5149513688412164959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: picture_2
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 1482
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0460bf442cb60380800000000000000
+      internalID: -9005303540738923506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: picture_3
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 1478
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f959463129aeb7a80800000000000000
+      internalID: -8467916761228601953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: picture_4
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 1481
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1ac476a5a33e96b0800000000000000
+      internalID: -5287732125931091428
       vertices: []
       indices: 
       edges: []
@@ -173,8 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Slippers_0: 2618000798541105028
-      Slippers_1: -1785131546608407467
+      picture_0: 2274226506919886036
+      picture_1: 5149513688412164959
+      picture_2: -9005303540738923506
+      picture_3: -8467916761228601953
+      picture_4: -5287732125931091428
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

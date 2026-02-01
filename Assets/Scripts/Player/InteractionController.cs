@@ -8,12 +8,12 @@ public class InteractionController : MonoBehaviour
 
     private GameObject interactable;
 
-    public Sprite ladder;
-    public Sprite treats;
-    public Sprite slippers;
-    public Sprite leaflet;
-    public Sprite key;
-    public Sprite photo;
+    public SpriteRenderer ladder;
+    public SpriteRenderer treats;
+    public SpriteRenderer slippers;
+    public SpriteRenderer leaflet;
+    public SpriteRenderer key;
+    public SpriteRenderer photo;
 
     public Sprite windowOpen;
     public Sprite windowClose;
@@ -86,34 +86,28 @@ public class InteractionController : MonoBehaviour
             SceneManager.LoadScene(tags.tags[1]);
         }
 
-        // Any holy entities please forgive me for the coding sins I'm about to commit in this spaghetti code below
+        // Any holy entities please forgive me for the coding sins I'm about to commit in this spaghetti code below - 4am edit - this comment applies to this entire project now.
 
         if (inRange && inventory.heldObject == tags.tags[0] && tags.tags[1] == "placement")
         {
-            if (inventory.heldObject == "ladder")
+            switch (inventory.heldObject)
             {
-                Debug.Log("Placing ladder");
-                sprite = ladder; //not... changing sprite? Hopefully it works with actual sprites or idk
-            } else if (inventory.heldObject == "treats")
-            {
-                Debug.Log("Placing treats");
-                sprite = treats;
-            } else if (inventory.heldObject == "slippers")
-            {
-                Debug.Log("Placing slippers");
-                sprite = slippers;
-            } else if (inventory.heldObject == "leaflet")
-            {
-                Debug.Log("Placing leaflet");
-                sprite = leaflet;
-            } else if (inventory.heldObject == "key")
-            {
-                Debug.Log("Placing key");
-                sprite = key;
-            } else if (inventory.heldObject == "photo")
-            {
-                Debug.Log("Placing photo");
-                sprite = photo;
+                case "ladder":
+                    Debug.Log("Placing ladder");
+                    ladder.enabled = true;
+                    break;
+                case "treats":
+                    Debug.Log("Placing treats");
+                    treats.enabled = true;
+                    break;
+                case "leaflet":
+                    Debug.Log("Placing leaflet");
+                    leaflet.enabled = true;
+                    break;
+                case "photo":
+                    Debug.Log("Placing photo");
+                    photo.enabled = true;
+                    break;
             }
 
             inventory.heldObject = "Empty";

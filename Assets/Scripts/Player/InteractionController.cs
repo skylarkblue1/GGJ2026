@@ -95,29 +95,32 @@ public class InteractionController : MonoBehaviour
 
         // Any holy entities please forgive me for the coding sins I'm about to commit in this spaghetti code below - 4am edit - this comment applies to this entire project now.
 
-        if (inRange && (inventory.heldObjects[0] == tags.tags[0] || inventory.heldObjects[1] == tags.tags[0]) && tags.tags[1] == "placement")
+        if (inRange && tags.tags[1] == "placement")
         {
-            switch (tags.tags[0])
+            if (inventory.heldObjects[0] == tags.tags[0] | inventory.heldObjects[1] == tags.tags[0])
             {
-                case "stool":
-                    Debug.Log("Placing stool");
-                    stool.enabled = false;
-                    break;
-                case "treats":
-                    Debug.Log("Placing treats");
-                    treats.enabled = false;
-                    break;
-                case "leaflet":
-                    Debug.Log("Placing leaflet");
-                    leaflet.enabled = false;
-                    break;
-                case "photo":
-                    Debug.Log("Placing photo");
-                    photo.enabled = false;
-                    break;
-            }
+                switch (tags.tags[0])
+                {
+                    case "stool":
+                        Debug.Log("Placing stool");
+                        stool.enabled = false;
+                        break;
+                    case "treats":
+                        Debug.Log("Placing treats");
+                        treats.enabled = false;
+                        break;
+                    case "leaflet":
+                        Debug.Log("Placing leaflet");
+                        leaflet.enabled = false;
+                        break;
+                    case "photo":
+                        Debug.Log("Placing photo");
+                        photo.enabled = false;
+                        break;
+                }
 
-            inventory.RemoveItem(tags.tags[0]);
+                inventory.RemoveItem(tags.tags[0]);
+            }
         }
 
         if (tags.tags[0] == "hide" && !hiding)

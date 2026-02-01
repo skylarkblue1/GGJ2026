@@ -7,14 +7,21 @@ public class InteractionController : MonoBehaviour
     public Inventory inventory;
 
     private GameObject interactable;
+    
+    [Header("Sprites for it being placed down")]
+    public SpriteRenderer stoolPlaced;
+    public SpriteRenderer treatsPlaced;
+    public SpriteRenderer leafletPlaced;
+    public SpriteRenderer keyPlaced;
+    public SpriteRenderer photoPlaced;
 
-    public SpriteRenderer ladder;
-    public SpriteRenderer treats;
-    public SpriteRenderer slippers;
-    public SpriteRenderer leaflet;
-    public SpriteRenderer key;
-    public SpriteRenderer photo;
+    [Header("Interact colliders")]
+    public PolygonCollider2D stool;
+    public PolygonCollider2D treats;
+    public PolygonCollider2D leaflet;
+    public PolygonCollider2D photo;
 
+    [Header("The rest of the stuff")]
     public Sprite windowOpen;
     public Sprite windowClose;
 
@@ -62,11 +69,11 @@ public class InteractionController : MonoBehaviour
     void OnInteract()
     {
         Debug.Log("Interacting");
-        if (inRange && inventory.heldObject == "Empty" && tags.tags[1] == "pickup")
+        if (inRange && inventory.heldObjectsCount < 2 && tags.tags[1] == "pickup")
         {
             Debug.Log("trying to interact");
-            inventory.heldObject = tags.tags[0];
-            Debug.Log("New held object is: " + inventory.heldObject);
+            inventory.AddItem(tags.tags[0]);
+            Debug.Log("New held object is: " + tags.tags[0]);
             interactable.SetActive(false);
         }
 
@@ -88,29 +95,29 @@ public class InteractionController : MonoBehaviour
 
         // Any holy entities please forgive me for the coding sins I'm about to commit in this spaghetti code below - 4am edit - this comment applies to this entire project now.
 
-        if (inRange && inventory.heldObject == tags.tags[0] && tags.tags[1] == "placement")
+        if (inRange && (inventory.heldObjects[0] == tags.tags[0] || inventory.heldObjects[1] == tags.tags[0]) && tags.tags[1] == "placement")
         {
-            switch (inventory.heldObject)
+            switch (tags.tags[0])
             {
-                case "ladder":
-                    Debug.Log("Placing ladder");
-                    ladder.enabled = true;
+                case "stool":
+                    Debug.Log("Placing stool");
+                    stool.enabled = false;
                     break;
                 case "treats":
                     Debug.Log("Placing treats");
-                    treats.enabled = true;
+                    treats.enabled = false;
                     break;
                 case "leaflet":
                     Debug.Log("Placing leaflet");
-                    leaflet.enabled = true;
+                    leaflet.enabled = false;
                     break;
                 case "photo":
                     Debug.Log("Placing photo");
-                    photo.enabled = true;
+                    photo.enabled = false;
                     break;
             }
 
-            inventory.heldObject = "Empty";
+            inventory.RemoveItem(tags.tags[0]);
         }
 
         if (tags.tags[0] == "hide" && !hiding)

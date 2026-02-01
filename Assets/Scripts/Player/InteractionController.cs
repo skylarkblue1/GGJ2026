@@ -9,24 +9,24 @@ public class InteractionController : MonoBehaviour
 
     private GameObject interactable;
     
-    [Header("Sprites for it being placed down")]
+    //[Header("Sprites for it being placed down")]
     public SpriteRenderer stoolPlaced;
     public SpriteRenderer treatsPlaced;
     public SpriteRenderer leafletPlaced;
     //public SpriteRenderer keyPlaced;
     public SpriteRenderer photoPlaced;
 
-    [Header("Interact colliders")]
+    //[Header("Interact colliders")]
     public PolygonCollider2D stool;
     public PolygonCollider2D treats;
     public PolygonCollider2D leaflet;
     public PolygonCollider2D photo;
 
-    [Header("The rest of the stuff")]
+    //[Header("The rest of the stuff")]
     public Sprite windowOpen;
     public Sprite windowClose;
 
-    [Header("Gran Placements")]
+    //[Header("Gran Placements")]
     public SpriteRenderer gran1;
     public SpriteRenderer gran2;
 

@@ -1,4 +1,3 @@
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -9,7 +8,7 @@ public class Inventory : MonoBehaviour
     public Image slot1;
     public Image slot2;
 
-    [Header("Sprites for inventory icons")]
+    //[Header("Sprites for inventory icons")]
     public Sprite stoolIcon;
     public Sprite treatIcon;
     public Sprite leafletIcon;

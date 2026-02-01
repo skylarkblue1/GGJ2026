@@ -33,6 +33,7 @@ public class InteractionController : MonoBehaviour
     // public Sprite dogAwake;
 
     public BoxCollider2D basementDoor;
+    public BoxCollider2D endingDoor;
 
     private SpriteRenderer self;
 
@@ -99,6 +100,11 @@ public class InteractionController : MonoBehaviour
             {
                 detection.dog = true;
                 basementDoor.enabled = true;
+            }
+
+            if (tags.tags[0] == "picture")
+            {
+                endingDoor.enabled = true;
             }
         }
 

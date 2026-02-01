@@ -19,6 +19,13 @@ public class DetectionController : MonoBehaviour
 
     public SpriteRenderer tvGlow;
 
+    public SpriteRenderer boxes1up;
+    public SpriteRenderer boxes1fall;
+    public SpriteRenderer boxes2up;
+    public SpriteRenderer boxes2fall;
+
+    public SpriteRenderer gran;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "detection")
@@ -46,6 +53,25 @@ public class DetectionController : MonoBehaviour
                 interactionController.hiding = true;
                 dogSleeping.enabled = false;
                 dogAwake.enabled = true;
+            }
+            else if (tags.tags[0] == "boxes1")
+            {
+                interactionController.hiding = true;
+                caughtbygran = true;
+                gran.enabled = true;
+                dialogueHandler.StartDialogue("CaughtGran");
+
+                boxes1up.enabled = false;
+                boxes1fall.enabled = true;
+            } else if (tags.tags[0] == "boxes2")
+            {
+                interactionController.hiding = true;
+                caughtbygran = true;
+                gran.enabled = true;
+                dialogueHandler.StartDialogue("CaughtGran");
+
+                boxes2up.enabled = false;
+                boxes2fall.enabled = true;
             }
         }
         else if (other.tag == "instagameover")

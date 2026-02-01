@@ -51,7 +51,7 @@ public class InteractionController : MonoBehaviour
     public SpriteRenderer mum1;
     public SpriteRenderer mum2;
 
-    public SpriteRenderer Overlay;
+    public SpriteRenderer overlay;
     public SpriteRenderer escape;
 
 
@@ -97,7 +97,7 @@ public class InteractionController : MonoBehaviour
         {
             if (tags.tags[0] == "leaflet")
             {
-                Overlay.enabled = true;
+                overlay.enabled = true;
                 escape.enabled = true;
 
                 hiding = true;
@@ -117,6 +117,10 @@ public class InteractionController : MonoBehaviour
 
             if (tags.tags[0] == "photo")
             {
+                overlay.enabled = true;
+                escape.enabled = true;
+
+                hiding = true;
                 endingDoor.enabled = true;
             }
         }
@@ -193,7 +197,7 @@ public class InteractionController : MonoBehaviour
 
     private void OnEscape()
     {
-        Overlay.enabled = false;
+        overlay.enabled = false;
         escape.enabled = false;
 
         hiding = false;

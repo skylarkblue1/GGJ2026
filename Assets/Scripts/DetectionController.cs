@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DetectionController : MonoBehaviour
 {
@@ -11,7 +13,7 @@ public class DetectionController : MonoBehaviour
     public SpriteRenderer dogSleeping;
     public SpriteRenderer dogAwake;
 
-    public DialogueHandler  dialogueHandler;
+    public DialogueHandler dialogueHandler;
     public InteractionController interactionController;
 
     public bool caughtbymum;
@@ -60,25 +62,28 @@ public class DetectionController : MonoBehaviour
             else if (tags.tags[0] == "boxes1")
             {
                 interactionController.hiding = true;
-                dialogueHandler.StartDialogue("CaughtGran");
-                caughtbygran = true;
                 gran.enabled = true;
+                Debug.Log("Caught by gran with boxes 1");
 
                 boxes1up.enabled = false;
                 SFXStart box1Audio = boxes1.GetComponent<SFXStart>();
                 box1Audio.StartSFX();
                 boxes1fall.enabled = true;
-            } else if (tags.tags[0] == "boxes2")
+
+                DialogueWait2();
+            }
+            else if (tags.tags[0] == "boxes2")
             {
                 interactionController.hiding = true;
-                dialogueHandler.StartDialogue("CaughtGran");
-                caughtbygran = true;
                 gran.enabled = true;
+                Debug.Log("Caught by gran with boxes 2");
 
                 boxes2up.enabled = false;
                 SFXStart box2Audio = boxes2.GetComponent<SFXStart>();
                 box2Audio.StartSFX();
                 boxes2fall.enabled = true;
+
+                StartCoroutine(DialogueWait2());
             }
         }
         else if (other.tag == "instagameover")
@@ -104,4 +109,10 @@ public class DetectionController : MonoBehaviour
 
     }
 
+    IEnumerator DialogueWait2()
+    {
+        Debug.Log("Waiting for a second then restarting");
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

@@ -787,7 +787,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 2a7b87bba7dd24b8d97017fe6adc185b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.73
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2032,7 +2032,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 051bb485d8e2a4288a4e3fb5af6fc8dd, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.581
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3157,8 +3157,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 2a7b87bba7dd24b8d97017fe6adc185b, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.73
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3334,6 +3334,14 @@ PrefabInstance:
       propertyPath: gran
       value: 
       objectReference: {fileID: 2138066775}
+    - target: {fileID: 8769075758889902646, guid: bd999aa3c0374874599b6a9a61a8284c, type: 3}
+      propertyPath: boxes1
+      value: 
+      objectReference: {fileID: 451890561}
+    - target: {fileID: 8769075758889902646, guid: bd999aa3c0374874599b6a9a61a8284c, type: 3}
+      propertyPath: boxes2
+      value: 
+      objectReference: {fileID: 1819815253}
     - target: {fileID: 8769075758889902646, guid: bd999aa3c0374874599b6a9a61a8284c, type: 3}
       propertyPath: boxes1up
       value: 

@@ -217,6 +217,8 @@ public class DialogueHandler : MonoBehaviour
 
     private void CaughtGranDialogue(int count)
     {
+
+        Debug.Log("Caught by Gran Dialogue");
         dialogueCount = count;
 
         if (dialogueCount > 12)

@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 using System.Threading;
 using Unity.VisualScripting;
@@ -29,6 +30,8 @@ public class DialogueHandler : MonoBehaviour
     private string whoSpeaking;
     private int dialogueCount = 0;
 
+    public DetectionController detectionController;
+
     private string dialogueString;
 
 
@@ -42,11 +45,25 @@ public class DialogueHandler : MonoBehaviour
         subtitles = gameObject.GetComponent<TextMeshProUGUI>();
 
         //For testing
-        StartNormalDialogue("Basement");
+        StartDialogue("LivingRoom");
     }
 
-    public void StartNormalDialogue(string location)
+    private void Update()
     {
+        // when dialogue count = 2, and whichdialogue = caughtmum, restart level
+        if (whichDialogue == "CaughtMum" && dialogueCount == 3)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        else if (whichDialogue == "CaughtGran" && dialogueCount == 3)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
+    public void StartDialogue(string location)
+    {
+        dialogueCount = 0;
         whichDialogue = location;
 
         if (!events.dialogueActive)
@@ -57,13 +74,16 @@ public class DialogueHandler : MonoBehaviour
                 KitchenDialogue(0);
             else if (whichDialogue == "Ending")
                 EndingDialogue(0);
-            else if (whichDialogue == "CaughtMum")
-                CaughtMumDialogue(0);
-            else if (whichDialogue == "CaughtGran")
-                CaughtGranDialogue(0);
             else if (whichDialogue == "Basement")
                 BasementDialogue(0);
-
+        }
+        else if (whichDialogue == "CaughtMum")
+        {
+            CaughtMumDialogue(0);
+        }
+        else if (whichDialogue == "CaughtGran")
+        {
+            CaughtGranDialogue(0);
         }
     }
 
@@ -96,9 +116,9 @@ public class DialogueHandler : MonoBehaviour
 
         subtitles.text = dialogueString;
 
-        if (dialogueCount == 0 || dialogueCount == 1 || dialogueCount == 2 || dialogueCount == 7)
+        if (dialogueCount == 1 || dialogueCount == 2 || dialogueCount == 7)
             StartCoroutine(DialogueWait5());
-        else if (dialogueCount == 5 || dialogueCount == 8 || dialogueCount == 10)
+        else if (dialogueCount == 5 || dialogueCount == 8 || dialogueCount == 10 || dialogueCount == 0)
             StartCoroutine(DialogueWait4());
         else if (dialogueCount == 3 || dialogueCount == 4 || dialogueCount == 6 || dialogueCount == 9 || dialogueCount == 11)
             StartCoroutine(DialogueWait3());
@@ -231,88 +251,207 @@ public class DialogueHandler : MonoBehaviour
 
     IEnumerator DialogueWait6()
     {
+        try
+        {
+            dialogueCount++;
+        }
+        catch
+        {
+            dialogueCount = 0;
+        }
         yield return new WaitForSeconds(6.0f);
-        dialogueCount++; // try catch here instead of the reset in each dialogue
-        if (whichDialogue == "LivingRoom")
-            LivingRoomDialogue(dialogueCount);
-        else if (whichDialogue == "Kitchen")
-            KitchenDialogue(dialogueCount);
-        else if (whichDialogue == "Ending")
-            EndingDialogue(dialogueCount);
-        else if (whichDialogue == "CaughtMum")
-            CaughtMumDialogue(dialogueCount);
-        else if (whichDialogue == "CaughtGran")
-            CaughtGranDialogue(dialogueCount);
-        else if (whichDialogue == "Basement")
-            BasementDialogue(dialogueCount);
+        if (detectionController.caughtbymum)
+            whichDialogue = "CaughtMum";
+        else if (detectionController.caughtbygran)
+            whichDialogue = "CaughtGran";
+
+
+
+        switch (whichDialogue)
+        {
+            case "LivingRoom":
+                LivingRoomDialogue(dialogueCount);
+                break;
+            case "Kitchen":
+                KitchenDialogue(dialogueCount);
+                break;
+            case "Ending":
+                EndingDialogue(dialogueCount);
+                break;
+            case "Basement":
+                BasementDialogue(dialogueCount);
+                break;
+            case "CaughtMum":
+                CaughtMumDialogue(dialogueCount);
+                break;
+            case "CaughtGran":
+                CaughtGranDialogue(dialogueCount);
+                break;
+        }
     }
     IEnumerator DialogueWait5()
     {
+        try
+        {
+            dialogueCount++;
+        }
+        catch
+        {
+            dialogueCount = 0;
+        }
         yield return new WaitForSeconds(5.0f);
-        dialogueCount++;
-        if (whichDialogue == "LivingRoom")
-            LivingRoomDialogue(dialogueCount);
-        else if (whichDialogue == "Kitchen")
-            KitchenDialogue(dialogueCount);
-        else if (whichDialogue == "Ending")
-            EndingDialogue(dialogueCount);
-        else if (whichDialogue == "CaughtMum")
-            CaughtMumDialogue(dialogueCount);
-        else if (whichDialogue == "CaughtGran")
-            CaughtGranDialogue(dialogueCount);
-        else if (whichDialogue == "Basement")
-            BasementDialogue(dialogueCount);
+
+        if (detectionController.caughtbymum)
+            whichDialogue = "CaughtMum";
+        else if (detectionController.caughtbygran)
+            whichDialogue = "CaughtGran";
+
+
+
+        switch (whichDialogue)
+        {
+            case "LivingRoom":
+                LivingRoomDialogue(dialogueCount);
+                break;
+            case "Kitchen":
+                KitchenDialogue(dialogueCount);
+                break;
+            case "Ending":
+                EndingDialogue(dialogueCount);
+                break;
+            case "Basement":
+                BasementDialogue(dialogueCount);
+                break;
+            case "CaughtMum":
+                CaughtMumDialogue(dialogueCount);
+                break;
+            case "CaughtGran":
+                CaughtGranDialogue(dialogueCount);
+                break;
+        }
     }
     IEnumerator DialogueWait4()
     {
+        try
+        {
+            dialogueCount++;
+        }
+        catch
+        {
+            dialogueCount = 0;
+        }
         yield return new WaitForSeconds(4.0f);
-        dialogueCount++;
-        if (whichDialogue == "LivingRoom")
-            LivingRoomDialogue(dialogueCount);
-        else if (whichDialogue == "Kitchen")
-            KitchenDialogue(dialogueCount);
-        else if (whichDialogue == "Ending")
-            EndingDialogue(dialogueCount);
-        else if (whichDialogue == "CaughtMum")
-            CaughtMumDialogue(dialogueCount);
-        else if (whichDialogue == "CaughtGran")
-            CaughtGranDialogue(dialogueCount);
-        else if (whichDialogue == "Basement")
-            BasementDialogue(dialogueCount);
+
+        if (detectionController.caughtbymum)
+            whichDialogue = "CaughtMum";
+        else if (detectionController.caughtbygran)
+            whichDialogue = "CaughtGran";
+
+
+
+        switch (whichDialogue)
+        {
+            case "LivingRoom":
+                LivingRoomDialogue(dialogueCount);
+                break;
+            case "Kitchen":
+                KitchenDialogue(dialogueCount);
+                break;
+            case "Ending":
+                EndingDialogue(dialogueCount);
+                break;
+            case "Basement":
+                BasementDialogue(dialogueCount);
+                break;
+            case "CaughtMum":
+                CaughtMumDialogue(dialogueCount);
+                break;
+            case "CaughtGran":
+                CaughtGranDialogue(dialogueCount);
+                break;
+        }
     }
     IEnumerator DialogueWait3()
     {
+        try
+        {
+            dialogueCount++;
+        }
+        catch
+        {
+            dialogueCount = 0;
+        }
         yield return new WaitForSeconds(3.0f);
-        dialogueCount++;
-        if (whichDialogue == "LivingRoom")
-            LivingRoomDialogue(dialogueCount);
-        else if (whichDialogue == "Kitchen")
-            KitchenDialogue(dialogueCount);
-        else if (whichDialogue == "Ending")
-            EndingDialogue(dialogueCount);
-        else if (whichDialogue == "CaughtMum")
-            CaughtMumDialogue(dialogueCount);
-        else if (whichDialogue == "CaughtGran")
-            CaughtGranDialogue(dialogueCount);
-        else if (whichDialogue == "Basement")
-            BasementDialogue(dialogueCount);
+
+        if (detectionController.caughtbymum)
+            whichDialogue = "CaughtMum";
+        else if (detectionController.caughtbygran)
+            whichDialogue = "CaughtGran";
+
+
+
+        switch (whichDialogue)
+        {
+            case "LivingRoom":
+                LivingRoomDialogue(dialogueCount);
+                break;
+            case "Kitchen":
+                KitchenDialogue(dialogueCount);
+                break;
+            case "Ending":
+                EndingDialogue(dialogueCount);
+                break;
+            case "Basement":
+                BasementDialogue(dialogueCount);
+                break;
+            case "CaughtMum":
+                CaughtMumDialogue(dialogueCount);
+                break;
+            case "CaughtGran":
+                CaughtGranDialogue(dialogueCount);
+                break;
+        }
     }
 
     IEnumerator DialogueWait2()
     {
+        try
+        {
+            dialogueCount++;
+        }
+        catch
+        {
+            dialogueCount = 0;
+        }
         yield return new WaitForSeconds(2.0f);
-        dialogueCount++;
-        if (whichDialogue == "LivingRoom")
-            LivingRoomDialogue(dialogueCount);
-        else if (whichDialogue == "Kitchen")
-            KitchenDialogue(dialogueCount);
-        else if (whichDialogue == "Ending")
-            EndingDialogue(dialogueCount);
-        else if (whichDialogue == "CaughtMum")
-            CaughtMumDialogue(dialogueCount);
-        else if (whichDialogue == "CaughtGran")
-            CaughtGranDialogue(dialogueCount);
-        else if (whichDialogue == "Basement")
-            BasementDialogue(dialogueCount);
+
+        if (detectionController.caughtbymum)
+            whichDialogue = "CaughtMum";
+        else if (detectionController.caughtbygran)
+            whichDialogue = "CaughtGran";
+
+
+
+        switch (whichDialogue)
+        {
+            case "LivingRoom":
+                LivingRoomDialogue(dialogueCount);
+                break;
+            case "Kitchen":
+                KitchenDialogue(dialogueCount);
+                break;
+            case "Ending":
+                EndingDialogue(dialogueCount);
+                break;
+            case "Basement":
+                BasementDialogue(dialogueCount);
+                break;
+            case "CaughtMum":
+                CaughtMumDialogue(dialogueCount);
+                break;
+            case "CaughtGran":
+                CaughtGranDialogue(dialogueCount);
+                break;
+        }
     }
 }

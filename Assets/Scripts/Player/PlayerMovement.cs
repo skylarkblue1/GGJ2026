@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!interactions.hiding)
             _rigidbody.linearVelocity = _movementInput * _speed;
+        else
+            _rigidbody.linearVelocity = Vector2.zero;
     }
 
     private void OnMove(InputValue inputValue)

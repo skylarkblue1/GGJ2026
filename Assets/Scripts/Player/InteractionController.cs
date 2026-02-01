@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InteractionController : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class InteractionController : MonoBehaviour
 
     public SpriteRenderer ePrompt;
 
+    public DetectionController detection;
+
     public void Awake()
     {
         self = gameObject.GetComponent<SpriteRenderer>();
@@ -42,22 +45,6 @@ public class InteractionController : MonoBehaviour
 
             tags = interactable.GetComponent<Tags>();
             sprite = interactable.GetComponent<SpriteRenderer>().sprite;
-
-            if (tags.tags[0] == "detection")
-            {
-                // trigger class in detection script this script is already too long
-            }
-            
-            if (tags.tags[0] == "disturbance")
-            {
-                if (tags.tags[1] == "dog")
-                {
-
-                } else if (tags.tags[1] == "boxes")
-                {
-
-                }
-            }
         }
     }
 
@@ -88,8 +75,15 @@ public class InteractionController : MonoBehaviour
             if (tags.tags[1] == "toopen")
             {
                 interactable.GetComponent<SpriteRenderer>().sprite = windowOpen;
+                detection.window = true;
                 //Start playing window sound
             }
+        }
+
+        // check if tag 0 is door, if yes, check tag1 for location and load that scene
+        if (inRange && tags.tags[0] == "door")
+        {
+            SceneManager.LoadScene(tags.tags[1]);
         }
 
         // Any holy entities please forgive me for the coding sins I'm about to commit in this spaghetti code below

@@ -102,7 +102,7 @@ public class InteractionController : MonoBehaviour
                 basementDoor.enabled = true;
             }
 
-            if (tags.tags[0] == "picture")
+            if (tags.tags[0] == "photo")
             {
                 endingDoor.enabled = true;
             }

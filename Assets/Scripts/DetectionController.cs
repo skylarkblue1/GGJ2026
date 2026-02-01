@@ -59,19 +59,19 @@ public class DetectionController : MonoBehaviour
                 interactionController.hiding = true;
                 caughtbygran = true;
                 gran.enabled = true;
-                dialogueHandler.StartDialogue("CaughtGran");
 
                 boxes1up.enabled = false;
                 boxes1fall.enabled = true;
+                dialogueHandler.StartDialogue("CaughtGran");
             } else if (tags.tags[0] == "boxes2")
             {
                 interactionController.hiding = true;
                 caughtbygran = true;
                 gran.enabled = true;
-                dialogueHandler.StartDialogue("CaughtGran");
 
                 boxes2up.enabled = false;
                 boxes2fall.enabled = true;
+                dialogueHandler.StartDialogue("CaughtGran");
             }
         }
         else if (other.tag == "instagameover")
